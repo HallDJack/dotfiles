@@ -3,7 +3,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/plugin/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -74,6 +74,9 @@ let g:airline_powerline_fonts = 1
 " Set Up Solarized
 set background=dark
 let g:solarized_termcolors=256
+let g:solarized_contrast = "high"
+let g:solarized_visibility= "normal"
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Highlight trailing whitespace
