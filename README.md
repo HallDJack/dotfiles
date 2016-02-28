@@ -5,7 +5,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
 1. Clone the repo.
 2. Load the iTerm2 settings
 ```
-Preferences > General > "Load preferences from a customer folder or URL
+Preferences > General > "Load preferences from a customer folder or URL"
 Open the plist in the repo.
 ```
 3. Run the following commands to symlink the files in the repo to the apporpriate places.
