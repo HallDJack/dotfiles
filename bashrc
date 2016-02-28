@@ -46,7 +46,7 @@ alias gb='git branch'
 alias gchanged='git whatchanged --format="%n%C(yellow)commit %H%n%CblueAuthor:      %Creset%an | %ae%n%CblueAuthor Date: %Creset%ad%n%CblueCommit Date: %Creset%cd%n%CblueMessage:%n%Creset%s%n%C(yellow)Changes:"'
 alias gdiff='git diff'
 alias gdiff-cw='git diff --color-words'
-# function gl() { git log -n "$@"; } } # Calls log for a specific depth
+function gl() { git log -n "$@"; } # Calls log for a specific depth
 alias glog='git log --color'
 alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
