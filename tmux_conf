@@ -1,0 +1,38 @@
+# Set up tmux for Powerline
+set -g default-terminal "screen-256color"
+set-option -g status on
+set-option -g status-interval 2
+set-option -g status-utf8 on
+set-option -g status-justify "centre"
+set-option -g status-left-length 60
+set-option -g status-right-length 90
+set-option -g status-left "#(~/Code/tmux-powerline/powerline.sh left)"
+set-option -g status-right "#(~/Code/tmux-powerline/powerline.sh right)"
+
+# Remap prefix to Control + a
+set -g prefix 'C-a'
+# unbind and then rebind
+unbind-key C-b
+bind-key 'C-a' send-prefix
+
+# Allow movement with H-J-K-L
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Set background color to black
+set -g status-bg colour235
+# Set foreground color to white
+set -g status-fg white
