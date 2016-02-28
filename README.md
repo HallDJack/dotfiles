@@ -29,26 +29,26 @@ ln -s $repo_dir/tmux_conf      ~/.tmux.conf
 ln -s $repo_dir/tmux_powerline ~/.tmux-powerline
 ln -s $repo_dir/vimrc          ~/.vimrc
 ```
-7. Install Vundle.
-```
-#Open Vim
-:BundleInstall
-```
-8. Set the git editor to be vim.
+7. Set the git editor to be vim.
 ```
 git config --global core.editor "vim"
 ```
-9. Clone and install the powerline fonts.
+8. Clone and install the powerline fonts.
 ```
 git clone https://github.com/powerline/fonts
 cd fonts
 ./install.sh
 ```
-10. Set up powerline-shell.
+9. Set up powerline-shell.
   - https://github.com/milkbikis/powerline-shell#setup **#TODO:** Add a fork of the powerline-shell repo to this repo to remove the dependency.
-11. Clone tmux-powerline repo.
+10. Clone tmux-powerline repo.
 ```
 git clone https://github.com/HallDJack/tmux-powerline
+```
+11. Install Vundle.
+```
+#Open Vim
+:BundleInstall
 ```
 12. Vim Powerline should be set up once a Vundle is performed.
   - Source repo: https://github.com/vim-airline/vim-airline
