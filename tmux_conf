@@ -9,6 +9,9 @@ set-option -g status-right-length 90
 set-option -g status-left "#(~/Code/tmux-powerline/powerline.sh left)"
 set-option -g status-right "#(~/Code/tmux-powerline/powerline.sh right)"
 
+bind < run '/Users/jack/Code/tmux-powerline/mute_powerline.sh left'      # Mute left statusbar.
+bind > run '/Users/jack/Code/tmux-powerline/mute_powerline.sh right'     # Mute right statusbar.
+
 # Remap prefix to Control + a
 set -g prefix 'C-a'
 # unbind and then rebind
