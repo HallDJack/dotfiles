@@ -27,6 +27,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/bashrc         ~/.bashrc
   ln -s $repo_dir/tmux_conf      ~/.tmux.conf
   ln -s $repo_dir/tmux_powerline ~/.tmux-powerline
+  ln -s $repo_dir/tmux_powerlinerc ~/.tmux-powerlinerc
   ln -s $repo_dir/vimrc          ~/.vimrc
   ```
 6. Set the git editor to be vim.
