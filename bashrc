@@ -48,6 +48,7 @@ alias gdiff='git diff'
 alias gdiff-cw='git diff --color-words'
 function gl() { git log -n "$@"; } # Calls log for a specific depth
 alias glog='git log --color'
+alias gpub='git push origin HEAD:`git symbolic-ref --short -q HEAD` -f -u;' # push the current branch to origin
 alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias gshow='git show'
