@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -44,6 +45,7 @@ filetype plugin indent on    " required
 
 " ************ Begin Config ************ "
 set number
+nmap ,l :set invnumber<Enter>
 
 set ts=2
 set sw=2
@@ -86,9 +88,18 @@ match ExtraWhitespace /\s\+$/
 " Trim Trailing Whitespace on Save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Scratch Config
+let g:scratch_autohide = &hidden
+let g:scratch_top = 0
+let g:scratch_horizontal = 0
+nmap gp :ScratchPreview<Enter>
+
+
 " NERDTree
 nmap ,n :NERDTreeToggle<CR>
-let NERDTreeWinSize=45
+" let NERDTreeWinSize=45
+"" Close vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set Up Rainbow Parens
 au VimEnter * RainbowParenthesesToggle
