@@ -74,7 +74,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 
 " Set Up Solarized
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
@@ -112,7 +112,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:ctrlp_map = ',t'
 nnoremap <silent> ,t :CtrlPMixed<CR>
 " Remap to ,b
-nnoremap <silent> ,b :CloseSingleConque<CR>:CtrlPBuffer<cr>
+nnoremap <silent> ,b :CtrlPBuffer<cr>
 " Ignore VCS files
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " Default to filename searches - so that appctrl will find application controller
