@@ -24,6 +24,10 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+# Allow faster resizing of panes
+bind < resize-p -L 10
+bind > resize-p -R 10
+
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
 
@@ -42,3 +46,6 @@ set -g status-fg white
 
 # Turn on Tmux Yank
 run-shell ~/clone/path/yank.tmux
+
+# Open PopPays Session
+bind P source-file ~/.tmux/poppays

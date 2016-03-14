@@ -117,3 +117,8 @@ nnoremap <silent> ,b :CtrlPBuffer<cr>
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " Default to filename searches - so that appctrl will find application controller
 let g:ctrlp_by_filename = 1
+
+" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
+" this is helpful to paste someone the path you're looking at
+nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
+nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
