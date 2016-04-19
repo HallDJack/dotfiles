@@ -47,6 +47,9 @@ filetype plugin indent on    " required
 set number
 nmap ,l :set invnumber<Enter>
 
+" No Swap Files
+set noswapfile
+
 set ts=2
 set sw=2
 set expandtab
