@@ -88,6 +88,10 @@ match ExtraWhitespace /\s\+$/
 " Trim Trailing Whitespace on Save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" File auto-complete until ambiguity
+set wildmenu
+set wildmode=list:longest
+
 " Scratch Config
 let g:scratch_autohide = &hidden
 let g:scratch_top = 0
