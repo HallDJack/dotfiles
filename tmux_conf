@@ -45,7 +45,7 @@ set -g status-bg colour235
 set -g status-fg white
 
 # Turn on Tmux Yank
-run-shell ~/clone/path/yank.tmux
+run-shell ~/Code/tmux-yank/yank.tmux
 
 # Open PopPays Session
 bind P source-file ~/.tmux/poppays
