@@ -34,6 +34,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
 
   ```
   git config --global core.editor "vim"
+  git config --global push.default simple
   git config --global user.name "Jack Hall"
   git config --global user.email jack@popularpays.com
   ```
