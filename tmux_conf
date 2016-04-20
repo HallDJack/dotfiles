@@ -19,6 +19,9 @@ set -g prefix 'C-a'
 unbind-key C-b
 bind-key 'C-a' send-prefix
 
+# Remap last window to Control + a
+bind-key C-a last-window
+
 # Allow movement with H-J-K-L
 bind h select-pane -L
 bind j select-pane -D

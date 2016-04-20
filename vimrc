@@ -70,6 +70,11 @@ set splitright
 nmap vv :vsplit<Enter>
 nmap ss :split<Enter>
 
+function! Rtags()
+  execute "! ctags -R"
+endfunction
+command! Rtags call Rtags()
+
 " Always show airline-powerline
 set laststatus=2
 

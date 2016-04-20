@@ -25,18 +25,20 @@ Dotfiles for tmux, vim and bash including powerline for all.
   export repo_dir=/path/to/this/repo
   ln -s $repo_dir/bash_profile   ~/.bash_profile
   ln -s $repo_dir/bashrc         ~/.bashrc
+  ln -s $repo_dir/git_ignore     ~/.gitignore
   ln -s $repo_dir/tmux_conf      ~/.tmux.conf
   ln -s $repo_dir/tmux_powerline ~/.tmux-powerline
   ln -s $repo_dir/tmux_powerlinerc ~/.tmux-powerlinerc
   ln -s $repo_dir/vimrc          ~/.vimrc
   ```
-6. Set the git editor to be vim.
+6. Configure git globals
 
   ```
   git config --global core.editor "vim"
   git config --global push.default simple
   git config --global user.name "Jack Hall"
   git config --global user.email jack@popularpays.com
+  git config --global core.excludesfile '~/.gitignore'
   ```
 7. Clone and install the powerline fonts.
 
@@ -72,15 +74,19 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ```
 13. Vim Powerline should be set up once a Vundle is performed.
   - Source repo: https://github.com/vim-airline/vim-airline
-14. Install Gnupg
+14. Install Ctags
+  ```
+  brew install ctags
+  ```
+15. Install Gnupg
 
   ```
   brew install gnupg
   ```
-15. Install RVM
+16. Install RVM
   - https://rvm.io/rvm/install#installing-rvm
-16. Install alt-ruby.vim. (From Dropbox)
-17. Extra Documentation incase something has gone wrong.
+17. Install alt-ruby.vim. (From Dropbox)
+18. Extra Documentation incase something has gone wrong.
   - https://github.com/altercation/solarized
   - https://powerline.readthedocs.org/en/master/#powerline
   - https://github.com/powerline/powerline (Extra Powerline stuff)
