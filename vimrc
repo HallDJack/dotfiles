@@ -45,8 +45,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " ************ Begin Config ************ "
+" Line numbers
 set number
 nmap ,l :set invnumber<Enter>
+
+" Highlight everything that matches the pattern
+:set hlsearch
+nmap // :noh<Enter>
 
 " No Swap Files
 set noswapfile
