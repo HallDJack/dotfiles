@@ -1,0 +1,34 @@
+# Turn remain on exit on
+set-remain-on-exit on
+
+# popular pays session
+new -s PopPays -n heroku
+splitw -h -p 50 -t 0
+
+# ppsuite
+neww -n ppsuite -c ~/Code/popular-pays/ppsuite
+selectw -t 1
+splitw -h -p 50 -t 1 -c ~/Code/popular-pays/ppsuite
+
+# social-data
+neww -n social-data -c ~/Code/popular-pays/social-data
+selectw -t 2
+splitw -h -p 50 -t 2 -c ~/Code/popular-pays/social-data
+
+# social-scraper
+neww -n social-scraper -c ~/Code/popular-pays/social-scraper
+selectw -t 3
+splitw -h -p 50 -t 3 -c ~/Code/popular-pays/social-scraper
+
+# staging
+neww -n staging
+selectw -t 4
+splitw -h -p 50 -t 0
+
+# dotfiles
+neww -n dotfiles -t 9 -c ~/Code/dotfiles
+selectw -t 9
+splitw -h -p 50 -t 9 -c ~/Code/dotfiles
+
+# select window 0
+selectw -t 1
