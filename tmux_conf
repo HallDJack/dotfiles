@@ -51,6 +51,9 @@ set -g status-bg colour235
 # Set foreground color to white
 set -g status-fg white
 
+# Set Solarized theme
+set -g @colors-solarized 'dark'
+
 # Turn on Tmux Yank
 run-shell ~/Code/tmux-yank/yank.tmux
 

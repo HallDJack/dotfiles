@@ -88,7 +88,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 
 " Set Up Solarized
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
