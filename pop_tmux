@@ -25,6 +25,11 @@ neww -n staging
 selectw -t 4
 splitw -h -p 50 -t 0
 
+# staging
+neww -n iOS -c ~/Code/popular-pays/PPiOS
+selectw -t 5
+splitw -h -p 50 -t 5 -c ~/Code/popular-pays/PPiOS
+
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles
 selectw -t 9
