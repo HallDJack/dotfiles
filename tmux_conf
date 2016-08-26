@@ -33,7 +33,7 @@ bind < resize-p -L 10
 bind > resize-p -R 10
 
 # Build up a session for PopPays dev
-bind P source-file ~/.tmux/poppays
+bind P source-file ~/Code/dotfiles/pop_tmux
 
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
