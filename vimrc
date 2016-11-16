@@ -95,6 +95,10 @@ let g:solarized_visibility= "normal"
 let g:solarized_termtrans = 1
 colorscheme solarized
 
+" Set Syntax for file types
+autocmd BufNewFile,BufRead *.html set syntax=html
+autocmd BufNewFile,BufRead *.hbs set syntax=javascript
+
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
