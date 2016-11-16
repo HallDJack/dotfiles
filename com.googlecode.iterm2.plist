@@ -452,7 +452,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>37BCD17B-7664-4A3C-A22C-A11081B874E6</string>
+	<string>666E25B9-5416-4658-A5DB-1920F2CF619F</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -664,11 +664,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>635 529 445 103 0 0 1080 2537 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>59 318 606 456 0 0 1280 777 </string>
+	<string>611 462 606 456 0 0 2560 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 289 620 392 0 0 1280 777 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 2560 1057 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>74 30 918 512 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 389 490 377 0 0 1280 777 </string>
+	<string>0 398 490 377 0 0 1280 777 </string>
 	<key>NeverWarnAboutPossibleOverrides</key>
 	<true/>
 	<key>NeverWarnAboutPossibleOverrides_selection</key>
@@ -3614,7 +3618,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-30T15:37:21Z</date>
+	<date>2016-11-15T21:51:41Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3660,6 +3664,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.4</string>
+	<string>3.0.10</string>
 </dict>
 </plist>
