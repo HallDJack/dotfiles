@@ -66,12 +66,18 @@ Dotfiles for tmux, vim and bash including powerline for all.
 
   ```
   #Open Vim
+  #Source vimrc
+  :source ~/.vimrc
+  #Run
   :PluginInstall
   ```
 12. Install all the Vundle plugins.
 
   ```vim
-  # Open vim and run the following command.
+  # Open Vim
+  #Source vimrc
+  :source ~/.vimrc
+  #Run
   :PluginInstall
   ```
 13. Vim Powerline should be set up once a Vundle is performed.

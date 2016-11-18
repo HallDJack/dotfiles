@@ -18,7 +18,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'skwp/greplace.vim'
@@ -28,6 +27,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-airline/vim-airline'
+" Rainbow Parens is messing up syntax highlighting for some file types.
+" Plugin 'kien/rainbow_parentheses.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,10 +125,10 @@ nmap ,n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set Up Rainbow Parens
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " CtrlP
 " Remap to ,t
