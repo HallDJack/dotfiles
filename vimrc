@@ -141,3 +141,7 @@ let g:ctrlp_by_filename = 1
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
+
+" Set syntax highlighting for weird extentions.
+au BufReadPost *.hbs set syntax=javascript
+au BufReadPost *.ejs set syntax=javascript
