@@ -12,6 +12,8 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ls='ls -G' # regular ls, but with colorized output.
 alias la='ls -Glah' # ls with color, long format,  dot files and human readable size.
+# ***** Bash ***** #
+alias ip='ifconfig en0 | grep inet | grep -v inet6 | awk "{print $2}"'
 # ***** iTerm ***** #
 alias dark='echo "Profile Set to Solarized Dark"; echo -e "\033]50;SetProfile=SolarizedDark\a"'
 alias light='echo "Profile Set to Solarized Light"; echo -e "\033]50;SetProfile=SolarizedLight\a"'
