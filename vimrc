@@ -27,6 +27,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Rainbow Parens is messing up syntax highlighting for some file types.
 " Plugin 'kien/rainbow_parentheses.vim'
 
@@ -82,17 +83,25 @@ function! Rtags()
 endfunction
 command! Rtags call Rtags()
 
-" Always show airline-powerline
-set laststatus=2
+" Configure airline
+set laststatus=2 " Always show airline-powerline
+let g:airline_theme='powerlineish' " Set airline-powerline theme.
+let g:airline_detect_modified = 1 " Allow airline to detect modified files.
+let g:airline_powerline_fonts = 1 " Populate powerline fonts.
+let g:airline_solarized_normal_green = 1
+let g:airline_solarized_dark_inactive_border = 1
+let g:airline_solarized_bg = 'dark'
+let g:solarized_termcolors = 256
 
-" Populate powerline fonts
-let g:airline_powerline_fonts = 1
 
 " Set Up Solarized
 set background=dark
+set t_Co=256
+" This setting seems to have stopped working. Here is some info.
+" https://github.com/altercation/vim-colors-solarized/issues/138
 let g:solarized_termcolors=256
 let g:solarized_contrast = "high"
-let g:solarized_visibility= "normal"
+let g:solarized_visibility= "high"
 let g:solarized_termtrans = 1
 colorscheme solarized
 
@@ -145,3 +154,4 @@ nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
 " Set syntax highlighting for weird extentions.
 au BufReadPost *.hbs set syntax=javascript
 au BufReadPost *.ejs set syntax=javascript
+au BufReadPost *.rabl set syntax=ruby
