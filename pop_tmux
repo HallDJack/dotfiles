@@ -9,21 +9,25 @@ splitw -h -p 50 -t 0
 neww -n ppsuite -c ~/Code/popular-pays/ppsuite
 selectw -t 1
 splitw -h -p 30 -t 1 -c ~/Code/popular-pays/ppsuite
+splitw -v -p 50 -t 1 -c ~/Code/popular-pays/ppsuite
 
 # social-data
 neww -n social-data -c ~/Code/popular-pays/social-data
 selectw -t 2
 splitw -h -p 30 -t 2 -c ~/Code/popular-pays/social-data
+splitw -v -p 50 -t 2 -c ~/Code/popular-pays/social-data
 
 # social-scraper
 neww -n social-scraper -c ~/Code/popular-pays/social-scraper
 selectw -t 3
-splitw -h -p 50 -t 3 -c ~/Code/popular-pays/social-scraper
+splitw -h -p 30 -t 3 -c ~/Code/popular-pays/social-scraper
+splitw -v -p 50 -t 3 -c ~/Code/popular-pays/social-scraper
 
 # creator web app
 neww -n cwa -c ~/Code/popular-pays/creators-web-app
 selectw -t 4
-splitw -h -p 50 -t 4 -c ~/Code/popular-pays/creators-web-app
+splitw -h -p 30 -t 4 -c ~/Code/popular-pays/creators-web-app
+splitw -v -p 50 -t 4 -c ~/Code/popular-pays/creators-web-app
 
 # iOS
 neww -n iOS -c ~/Code/popular-pays/PPiOS
