@@ -85,17 +85,18 @@ command! Rtags call Rtags()
 
 " Configure airline
 set laststatus=2 " Always show airline-powerline
-let g:airline_theme='powerlineish' " Set airline-powerline theme.
+" let g:airline_theme='powerlineish' " Set airline-powerline theme.
+let g:airline_theme='solarized' " Set airline-solarized theme.
 let g:airline_detect_modified = 1 " Allow airline to detect modified files.
 let g:airline_powerline_fonts = 1 " Populate powerline fonts.
 let g:airline_solarized_normal_green = 1
 let g:airline_solarized_dark_inactive_border = 1
-let g:airline_solarized_bg = 'dark'
+let g:airline_solarized_bg = 'light'
 let g:solarized_termcolors = 256
 
 
 " Set Up Solarized
-set background=dark
+set background=light
 set t_Co=256
 " This setting seems to have stopped working. Here is some info.
 " https://github.com/altercation/vim-colors-solarized/issues/138
