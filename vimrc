@@ -153,6 +153,6 @@ nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
 
 " Set syntax highlighting for weird extentions.
-au BufReadPost *.hbs set syntax=javascript
-au BufReadPost *.ejs set syntax=javascript
-au BufReadPost *.rabl set syntax=ruby
+au BufRead *.hbs set syntax=javascript
+au BufRead *.ejs set syntax=javascript
+au BufRead *.rabl set syntax=ruby
