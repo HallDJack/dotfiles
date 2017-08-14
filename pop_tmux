@@ -29,10 +29,16 @@ selectw -t 4
 splitw -h -p 30 -t 4 -c ~/Code/popular-pays/creators-web-app
 splitw -v -p 50 -t 4 -c ~/Code/popular-pays/creators-web-app
 
+# agency web app
+neww -n awa -c ~/Code/popular-pays/agency-web-app
+selectw -t 5
+splitw -h -p 30 -t 5 -c ~/Code/popular-pays/agency-web-app
+splitw -v -p 50 -t 5 -c ~/Code/popular-pays/agency-web-app
+
 # iOS
 neww -n iOS -c ~/Code/popular-pays/PPiOS
-selectw -t 5
-splitw -h -p 50 -t 5 -c ~/Code/popular-pays/PPiOS
+selectw -t 6
+splitw -h -p 50 -t 6 -c ~/Code/popular-pays/PPiOS
 
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles

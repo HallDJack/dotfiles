@@ -56,6 +56,9 @@ alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git co
 alias gshow='git show'
 alias gst='git status'
 # function gwc() { git whatchanged -"$@" --format="%n%C(yellow)commit %H%n%CblueAuthor:      %Creset%an | %ae%n%CblueAuthor Date: %Creset%ad%n%CblueCommit Date: %Creset%cd%n%CblueMessage:%n%Creset%s%n%C(yellow)Changes:"; } } # Gets what changed for a specific depth
+branch() {
+  git checkout -b jh-$1;
+}
 # ***** Tools ***** #
 alias tcpd3000="sudo tcpdump -s 0 -A -i lo0 'tcp port 3000 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 watch_func() {
