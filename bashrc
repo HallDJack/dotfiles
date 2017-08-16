@@ -41,6 +41,8 @@ alias exit='echo "Welcome back"; echo -e "\033]50;SetProfile=Default\a"; exit'
 alias ssh='echo "Welcome to the Danger Zone"; echo -e "\033]50;SetProfile=DangerZone\a"; ssh'
 # ***** tmux *****#
 alias tmux='tmux -2'
+# ***** tmate *****#
+alias sshmate='tmate show-messages'
 # ***** git ***** #
 alias ci='git commit'
 alias co='git checkout'
