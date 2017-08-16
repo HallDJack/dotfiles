@@ -96,7 +96,7 @@ let g:solarized_termcolors = 256
 
 
 " Set Up Solarized
-set background=light
+set background=dark
 set t_Co=256
 " This setting seems to have stopped working. Here is some info.
 " https://github.com/altercation/vim-colors-solarized/issues/138
