@@ -78,6 +78,9 @@ set splitright
 nmap vv :vsplit<Enter>
 nmap ss :split<Enter>
 
+" Open Split 100%
+nmap <c-o> :res 100<CR>
+
 function! Rtags()
   execute "! ctags -R"
 endfunction
