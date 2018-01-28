@@ -1,6 +1,7 @@
 alias lsusb='system_profiler SPUSBDataType'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH: /usr/local/Cellar/elixir/1.4.2/bin/" # Add Elixir to PATH for development
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # Set LS Colors
