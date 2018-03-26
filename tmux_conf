@@ -61,5 +61,5 @@ set -g status-fg white
 set -g @colors-solarized 'light'
 
 # Turn on Tmux Yank
-run-shell ~/Code/tmux-yank/yank.tmux
+#run-shell ~/Code/tmux-yank/yank.tmux
 
