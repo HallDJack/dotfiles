@@ -86,6 +86,9 @@ function! Rtags()
 endfunction
 command! Rtags call Rtags()
 
+" Copy what was just yanked to the system clipboard with ,cc
+nnoremap <leader>cc :call system('pbcopy', @0)<CR>
+
 " Configure airline
 set laststatus=2 " Always show airline-powerline
 " let g:airline_theme='powerlineish' " Set airline-powerline theme.

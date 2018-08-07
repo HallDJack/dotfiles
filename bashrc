@@ -15,6 +15,7 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ls='ls -G' # regular ls, but with colorized output.
 alias la='ls -Glah' # ls with color, long format,  dot files and human readable size.
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 # ***** Bash ***** #
 alias ip='ifconfig en0 | grep inet | grep -v inet6 | awk "{print $2}"'
 # ***** iTerm ***** #
@@ -73,6 +74,9 @@ watch_func() {
 alias watch=watch_func
 alias usb_status='system_profiler SPUSBDataType'
 alias disk_status='diskutil cs list'
+# ***** Bundle ***** #
+alias be='bundle exec'
+alias bspec='bundle exec rspec'
 
 
 export NVM_DIR="$HOME/.nvm"
