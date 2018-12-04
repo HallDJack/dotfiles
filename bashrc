@@ -37,9 +37,12 @@ alias title='set_iterm_title'
 # ***** powerline ***** #
 # . /Users/jack/Code/powerline/powerline/bindings/bash/powerline.sh
 function _update_ps1() {
-  export PS1="$(/Users/jack/Code/powerline-shell/powerline-shell.py $?)"
+    PS1=$(powerline-shell $?)
 }
-export PROMPT_COMMAND="_update_ps1"
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 # ***** ssh ***** #
 alias exit='echo "Welcome back"; echo -e "\033]50;SetProfile=Default\a"; exit'
 alias ssh='echo "Welcome to the Danger Zone"; echo -e "\033]50;SetProfile=DangerZone\a"; ssh'
