@@ -64,8 +64,17 @@ alias gprune_local='git checkout --quiet master && git branch --merged | grep --
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias gshow='git show'
 alias gst='git status'
-# function gwc() { git whatchanged -"$@" --format="%n%C(yellow)commit %H%n%CblueAuthor:      %Creset%an | %ae%n%CblueAuthor Date: %Creset%ad%n%CblueCommit Date: %Creset%cd%n%CblueMessage:%n%Creset%s%n%C(yellow)Changes:"; } } # Gets what changed for a specific depth
 branch() {
+  echo "Ticket:"
+  read ticket
+  echo "Name:"
+  read name
+
+  upper=`echo "$ticket" | tr '[:lower:]' '[:upper:]'`
+  str="$upper/$name";
+  git checkout -b ${str// /-};
+}
+simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
 }
