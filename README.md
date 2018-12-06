@@ -27,6 +27,8 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/bash_profile     ~/.bash_profile
   ln -s $repo_dir/bashrc           ~/.bashrc
   ln -s $repo_dir/git_ignore       ~/.gitignore
+  ln -s $repo_dir/irbrc            ~/.irbrc
+  ln -s $repo_dir/rspecrc          ~/.rspecrc
   ln -s $repo_dir/tmux_conf        ~/.tmux.conf
   ln -s $repo_dir/tmux_powerline   ~/.tmux-powerline
   ln -s $repo_dir/tmux_powerlinerc ~/.tmux-powerlinerc
