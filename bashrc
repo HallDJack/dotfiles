@@ -44,8 +44,8 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 # ***** ssh ***** #
-alias exit='echo "Welcome back"; echo -e "\033]50;SetProfile=Default\a"; exit'
-alias ssh='echo "Welcome to the Danger Zone"; echo -e "\033]50;SetProfile=DangerZone\a"; ssh'
+# alias exit='echo "Welcome back"; echo -e "\033]50;SetProfile=Default\a"; exit'
+# alias ssh='echo "Welcome to the Danger Zone"; echo -e "\033]50;SetProfile=DangerZone\a"; ssh'
 # ***** tmux *****#
 alias tmux='tmux -2'
 # ***** tmate *****#
@@ -64,7 +64,7 @@ alias gprune_local='git checkout --quiet master && git branch --merged | grep --
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias gshow='git show'
 alias gst='git status'
-branch() {
+function branch() {
   echo "Ticket:"
   read ticket
   echo "Name:"
@@ -74,7 +74,7 @@ branch() {
   str="$upper/$name";
   git checkout -b ${str// /-};
 }
-simple-branch() {
+function simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
 }
