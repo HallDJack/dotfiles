@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'awesome_print'
 require 'irb/ext/save-history'
+require 'pry-byebug'
 
 p "hello"
 
