@@ -78,8 +78,11 @@ set splitright
 nmap vv :vsplit<Enter>
 nmap ss :split<Enter>
 
-" Open Split 100%
-nmap <c-o> :res 100<CR>
+" Open Split in a new Tab
+nmap <c-o> :tab sp<Enter>
+
+" Close Tab
+nmap <C-c> <C-W>c
 
 function! Rtags()
   execute "! ctags -R"
