@@ -106,8 +106,14 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ```
 17. Install RVM
   - https://rvm.io/rvm/install#installing-rvm
-18. Install alt-ruby.vim. (From Dropbox)
-19. Extra Documentation incase something has gone wrong.
+18. Install Global Gems
+
+  ```
+  rvm @global do gem install awesome_print
+  rvm @global do gem install pry-byebug
+  ```
+19. Install alt-ruby.vim. (From Dropbox)
+20. Extra Documentation incase something has gone wrong.
   - https://github.com/altercation/solarized
   - https://powerline.readthedocs.org/en/master/#powerline
   - https://github.com/powerline/powerline (Extra Powerline stuff)
