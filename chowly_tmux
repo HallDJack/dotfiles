@@ -2,7 +2,10 @@
 set-remain-on-exit on
 
 # Chowly session
-new -s Chowly -n chowly -c ~/Code/chowly-inc/chowly
+new -s Chowly
+
+neww -n chowly -t 0 -c ~/Code/chowly-inc/chowly
+selectw -t 0
 splitw -h -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 splitw -v -p 50 -t 1 -c ~/Code/chowly-inc/chowly
 
@@ -13,3 +16,7 @@ splitw -h -p 50 -t 9 -c ~/Code/dotfiles
 
 # select window 0
 selectw -t 0
+kill-window
+
+# select window 1
+selectw -t 1
