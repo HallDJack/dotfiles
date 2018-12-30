@@ -18,6 +18,14 @@ alias la='ls -Glah' # ls with color, long format,  dot files and human readable 
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 # ***** Bash ***** #
 alias ip='ifconfig en0 | grep inet | grep -v inet6 | awk "{print $2}"'
+sortByDate() {
+  for f in *; do
+    dir=$(stat -f%SB -t%Y-%m-%d "$f")
+    echo $f '->' $dir
+    [ -d "$dir" ] || mkdir "$dir"
+    mv "$f" "$dir"/
+  done
+}
 # ***** iTerm ***** #
 alias dark='echo "Profile Set to Solarized Dark"; echo -e "\033]50;SetProfile=SolarizedDark\a"'
 alias light='echo "Profile Set to Solarized Light"; echo -e "\033]50;SetProfile=SolarizedLight\a"'
