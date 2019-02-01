@@ -16,16 +16,17 @@ Plugin 'VundleVim/Vundle.vim'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 
+Plugin 'Townk/vim-autoclose'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mtth/scratch.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'skwp/greplace.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'Townk/vim-autoclose'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Rainbow Parens is messing up syntax highlighting for some file types.
@@ -63,6 +64,8 @@ set sw=2
 set expandtab
 set autoindent
 set cindent
+
+set autoread
 
 " Easier Split Movement
 nnoremap <C-J> <C-W><C-J>
@@ -160,6 +163,12 @@ let g:ctrlp_by_filename = 1
 " this is helpful to paste someone the path you're looking at
 nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
 nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
+
+" abbreviations for commonly written code segments.
+iabbrev IT it '' do<CR>end
+iabbrev CONT context '' do<CR>end
+iabbrev DESC describe '' do<CR>end
+iabbrev pry binding.pry
 
 " Set syntax highlighting for weird extentions.
 au BufRead *.hbs set syntax=javascript

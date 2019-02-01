@@ -100,3 +100,17 @@ alias bspec='bundle exec rspec'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ***** Ember Addons ***** #
+function publish-demo() {
+  npm run deploy
+}
+function release-addon() {
+  read -p "Version number: " version
+  echo 'Release Notes: (ctrl-d to quit)'
+  notes=$(</dev/stdin)
+
+  git tag -a "v$version" -m "$notes"
+  git push --tags
+  npm publish
+}
