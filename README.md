@@ -24,16 +24,17 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ```
   mkdir ~/.tmux
   export repo_dir=/path/to/this/repo
-  ln -s $repo_dir/bash_profile     ~/.bash_profile
-  ln -s $repo_dir/bashrc           ~/.bashrc
-  ln -s $repo_dir/git_ignore       ~/.gitignore
-  ln -s $repo_dir/irbrc            ~/.irbrc
-  ln -s $repo_dir/rspecrc          ~/.rspec
-  ln -s $repo_dir/tmux_conf        ~/.tmux.conf
-  ln -s $repo_dir/tmux_powerline   ~/.tmux-powerline
-  ln -s $repo_dir/tmux_powerlinerc ~/.tmux-powerlinerc
-  ln -s $repo_dir/pop_tmux         ~/.tmux/poppays
-  ln -s $repo_dir/vimrc            ~/.vimrc
+  ln -s $repo_dir/bash_profile           ~/.bash_profile
+  ln -s $repo_dir/bashrc                 ~/.bashrc
+  ln -s $repo_dir/git_ignore             ~/.gitignore
+  ln -s $repo_dir/irbrc                  ~/.irbrc
+  ln -s $repo_dir/powerline_shell_config ~/.config/powerline-shell/config.json
+  ln -s $repo_dir/rspecrc                ~/.rspec
+  ln -s $repo_dir/tmux_conf              ~/.tmux.conf
+  ln -s $repo_dir/tmux_powerline         ~/.tmux-powerline
+  ln -s $repo_dir/tmux_powerlinerc       ~/.tmux-powerlinerc
+  ln -s $repo_dir/pop_tmux               ~/.tmux/poppays
+  ln -s $repo_dir/vimrc                  ~/.vimrc
   ```
 6. Configure git globals
 
