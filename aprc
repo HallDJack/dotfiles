@@ -1,0 +1,6 @@
+AwesomePrint.defaults = {
+  indent: 2,
+  sort_keys: true,
+  sort_vars: true,
+  ruby19_syntax: true
+}

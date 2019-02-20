@@ -23,6 +23,8 @@ Dotfiles for tmux, vim and bash including powerline for all.
 
   ```
   mkdir ~/.tmux
+  mkdir ~/.config
+  mkdir ~/.config/powerline-shell
   export repo_dir=/path/to/this/repo
   ln -s $repo_dir/bash_profile           ~/.bash_profile
   ln -s $repo_dir/bashrc                 ~/.bashrc
@@ -30,6 +32,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/irbrc                  ~/.irbrc
   ln -s $repo_dir/powerline_shell_config ~/.config/powerline-shell/config.json
   ln -s $repo_dir/rspecrc                ~/.rspec
+  ln -s $repo_dir/aprc                   ~/.aprc
   ln -s $repo_dir/tmux_conf              ~/.tmux.conf
   ln -s $repo_dir/tmux_powerline         ~/.tmux-powerline
   ln -s $repo_dir/tmux_powerlinerc       ~/.tmux-powerlinerc
