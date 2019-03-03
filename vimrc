@@ -138,8 +138,9 @@ nmap gp :ScratchPreview<Enter>
 
 " NERDTree
 nmap ,n :NERDTreeToggle<CR>
+let g:NERDTreeNodeDelimiter = "\u00a0"
 " let NERDTreeWinSize=45
-"" Close vim if the only window left open is NERDTree
+" Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set Up Rainbow Parens
