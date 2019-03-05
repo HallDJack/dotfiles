@@ -85,6 +85,7 @@ function simple-branch() {
   git checkout -b ${str// /-};
 }
 # ***** Tools ***** #
+alias ngrok="~/Code/ngrok"
 alias tcpd3000="sudo tcpdump -s 0 -A -i lo0 'tcp port 3000 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 watch_func() {
   while :; do clear; $1; sleep $2; done
