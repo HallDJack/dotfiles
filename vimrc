@@ -177,6 +177,4 @@ au BufRead *.rabl set syntax=ruby
 
 " flash the line that contains the cursor
 map ; :set cursorline<CR>:set cursorcolumn<CR>:sleep 100m<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
-hi CursorLine ctermbg=61 guibg=61
-hi CursorColumn ctermbg=61 guibg=61
 
