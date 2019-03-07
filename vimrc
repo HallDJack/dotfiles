@@ -130,10 +130,9 @@ set wildmenu
 set wildmode=list:longest
 
 " Scratch Config
-let g:scratch_autohide = &hidden
+let g:scratch_autohide = 1
 let g:scratch_top = 0
 let g:scratch_horizontal = 0
-nmap gp :ScratchPreview<Enter>
 
 
 " NERDTree
