@@ -84,8 +84,12 @@ function simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
 }
+function delete-branch() {
+  git branch -D $@; git push origin --delete $@
+}
 # ***** Tools ***** #
 alias ngrok="~/Code/ngrok"
+alias tcpd80="sudo tcpdump -s 0 -A -i lo0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 alias tcpd3000="sudo tcpdump -s 0 -A -i lo0 'tcp port 3000 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
 watch_func() {
   while :; do clear; $1; sleep $2; done
