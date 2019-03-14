@@ -29,8 +29,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Rainbow Parens is messing up syntax highlighting for some file types.
-" Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -142,12 +141,6 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 " Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Set Up Rainbow Parens
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
-
 " CtrlP
 " Remap to ,t
 let g:ctrlp_map = ',t'
@@ -170,10 +163,15 @@ iabbrev CONT context '' do<CR>end
 iabbrev DESC describe '' do<CR>end
 iabbrev pry binding.pry
 
+" Rainbow Parens
+let g:rainbow_active = 1
+au VimEnter * RainbowToggleOn
+
 " Set syntax highlighting for weird extentions.
 au BufRead *.hbs set syntax=javascript
 au BufRead *.ejs set syntax=javascript
 au BufRead *.rabl set syntax=ruby
+au BufRead *.rb set syntax=ruby
 
 " flash the line that contains the cursor
 map ; :set cursorline<CR>:set cursorcolumn<CR>:sleep 100m<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
