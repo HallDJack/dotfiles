@@ -114,6 +114,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
 
   ```
   rvm @global do gem install awesome_print
+  rvm @global do gem install pry
   rvm @global do gem install pry-byebug
   ```
 19. Install alt-ruby.vim. (From Dropbox)
