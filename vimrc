@@ -167,6 +167,9 @@ iabbrev pry binding.pry
 let g:rainbow_active = 1
 au VimEnter * RainbowToggleOn
 
+" Format JSON Pretty
+nmap =j :%!python -m json.tool<CR>
+
 " Set syntax highlighting for weird extentions.
 au BufRead *.hbs set syntax=javascript
 au BufRead *.ejs set syntax=javascript
