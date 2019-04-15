@@ -51,6 +51,14 @@ function _update_ps1() {
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
+# Sends a notification center notification for the current command.
+function notify() {
+  notification_str="display notification \"Finished Running: $@\" with title \"Notify\""
+  $@
+  osascript -e "$notification_str"
+}
+
 # ***** ssh ***** #
 # alias exit='echo "Welcome back"; echo -e "\033]50;SetProfile=Default\a"; exit'
 # alias ssh='echo "Welcome to the Danger Zone"; echo -e "\033]50;SetProfile=DangerZone\a"; ssh'
@@ -101,7 +109,12 @@ alias disk_status='diskutil cs list'
 alias be='bundle exec'
 alias bspec='bundle exec rspec'
 
+# ***** Rspec ***** #
+function nspec() {
+  notify rspec $@
+}
 
+# ***** NVM ***** #
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
