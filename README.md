@@ -19,7 +19,12 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ```
   brew install tmux
   ```
-5. Run the following commands to symlink the files in the repo to the apporpriate places.
+5. Install Tmux Plugin Manager ((TPM)[https://github.com/tmux-plugins/tpm])
+
+  ```
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ```
+6. Run the following commands to symlink the files in the repo to the apporpriate places.
 
   ```
   mkdir ~/.tmux
@@ -39,7 +44,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/pop_tmux               ~/.tmux/poppays
   ln -s $repo_dir/vimrc                  ~/.vimrc
   ```
-6. Configure git globals
+7. Configure git globals
 
   ```
   git config --global core.editor "vim"
@@ -48,21 +53,21 @@ Dotfiles for tmux, vim and bash including powerline for all.
   git config --global user.email jack@popularpays.com
   git config --global core.excludesfile '~/.gitignore'
   ```
-7. Clone and install the powerline fonts.
+8. Clone and install the powerline fonts.
 
   ```
   git clone https://github.com/powerline/fonts
   cd fonts
   ./install.sh
   ```
-8. Set up powerline-shell.
+9. Set up powerline-shell.
   - https://github.com/milkbikis/powerline-shell#setup **#TODO:** Add a fork of the powerline-shell repo to this repo to remove the dependency.
-9. Clone tmux-powerline repo.
+10. Clone tmux-powerline repo.
 
   ```
   git clone https://github.com/HallDJack/tmux-powerline
   ```
-10. Install Karabiner-Elements.
+11. Install Karabiner-Elements.
 
   Download:
   ```
@@ -73,13 +78,13 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/karabiner ~/.config
   launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
   ```
-11. Clone Vundle.
+12. Clone Vundle.
 
   ```
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/plugin/Vundle.vim
   ```
-12. Install Vundle.
+13. Install Vundle.
 
   ```
   #Open Vim
@@ -88,7 +93,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   #Run
   :PluginInstall
   ```
-13. Install all the Vundle plugins.
+14. Install all the Vundle plugins.
 
   ```vim
   # Open Vim
@@ -97,28 +102,28 @@ Dotfiles for tmux, vim and bash including powerline for all.
   #Run
   :PluginInstall
   ```
-14. Vim Powerline should be set up once a Vundle is performed.
+15. Vim Powerline should be set up once a Vundle is performed.
   - Source repo: https://github.com/vim-airline/vim-airline
-15. Install Ctags
+16. Install Ctags
   ```
   brew install ctags
   ```
-16. Install Gnupg
+17. Install Gnupg
 
   ```
   brew install gnupg
   ```
-17. Install RVM
+18. Install RVM
   - https://rvm.io/rvm/install#installing-rvm
-18. Install Global Gems
+19. Install Global Gems
 
   ```
   rvm @global do gem install awesome_print
   rvm @global do gem install pry
   rvm @global do gem install pry-byebug
   ```
-19. Install alt-ruby.vim. (From Dropbox)
-20. Extra Documentation incase something has gone wrong.
+20. Install alt-ruby.vim. (From Dropbox)
+21. Extra Documentation incase something has gone wrong.
   - https://github.com/altercation/solarized
   - https://powerline.readthedocs.org/en/master/#powerline
   - https://github.com/powerline/powerline (Extra Powerline stuff)
