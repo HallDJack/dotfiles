@@ -122,8 +122,14 @@ Dotfiles for tmux, vim and bash including powerline for all.
   rvm @global do gem install pry
   rvm @global do gem install pry-byebug
   ```
-20. Install alt-ruby.vim. (From Dropbox)
-21. Extra Documentation incase something has gone wrong.
+20. Install NPM & NPX [link](https://medium.com/@kkostov/how-to-install-node-and-npm-on-macos-using-homebrew-708e2c3877bd)
+
+  ```
+  brew install node
+  npm install -g npx
+  ```
+21. Install alt-ruby.vim. (From Dropbox)
+22. Extra Documentation incase something has gone wrong.
   - https://github.com/altercation/solarized
   - https://powerline.readthedocs.org/en/master/#powerline
   - https://github.com/powerline/powerline (Extra Powerline stuff)
