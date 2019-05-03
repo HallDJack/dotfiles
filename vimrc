@@ -49,8 +49,14 @@ filetype plugin indent on    " required
 
 " ************ Begin Config ************ "
 " Line numbers
-set number
-nmap ,l :set invnumber<Enter>
+:set number relativenumber
+nmap ,l :set nonumber norelativenumber<CR>:sleep 5000m<CR>:set number relativenumber<CR>
+" Automatically toggle between absolute and hybrid numbers automatically based on mode
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 " Highlight everything that matches the pattern
 :set hlsearch
@@ -155,8 +161,8 @@ let g:ctrlp_by_filename = 1
 
 " copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
 " this is helpful to paste someone the path you're looking at
-nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
-nnoremap <silent> <leader>cn :let @* = expand("%:t")<CR>"
+nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
+nnoremap <silent> ,cn :let @* = expand("%:t")<CR>"
 
 " abbreviations for commonly written code segments.
 iabbrev IT it '' do<CR>end
