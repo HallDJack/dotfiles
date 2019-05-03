@@ -19,12 +19,17 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ```
   brew install tmux
   ```
-5. Install Tmux Plugin Manager ((TPM)[https://github.com/tmux-plugins/tpm])
+5. Install reattach-to-user-namespace
+
+  ```
+  brew install reattach-to-user-namespace
+  ```
+6. Install Tmux Plugin Manager ((TPM)[https://github.com/tmux-plugins/tpm])
 
   ```
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ```
-6. Run the following commands to symlink the files in the repo to the apporpriate places.
+7. Run the following commands to symlink the files in the repo to the apporpriate places.
 
   ```
   mkdir ~/.tmux
@@ -44,7 +49,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/pop_tmux               ~/.tmux/poppays
   ln -s $repo_dir/vimrc                  ~/.vimrc
   ```
-7. Configure git globals
+8. Configure git globals
 
   ```
   git config --global core.editor "vim"
@@ -53,21 +58,21 @@ Dotfiles for tmux, vim and bash including powerline for all.
   git config --global user.email jack@popularpays.com
   git config --global core.excludesfile '~/.gitignore'
   ```
-8. Clone and install the powerline fonts.
+9. Clone and install the powerline fonts.
 
   ```
   git clone https://github.com/powerline/fonts
   cd fonts
   ./install.sh
   ```
-9. Set up powerline-shell.
+10. Set up powerline-shell.
   - https://github.com/milkbikis/powerline-shell#setup **#TODO:** Add a fork of the powerline-shell repo to this repo to remove the dependency.
-10. Clone tmux-powerline repo.
+11. Clone tmux-powerline repo.
 
   ```
   git clone https://github.com/HallDJack/tmux-powerline
   ```
-11. Install Karabiner-Elements.
+12. Install Karabiner-Elements.
 
   Download:
   ```
@@ -78,13 +83,13 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/karabiner ~/.config
   launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
   ```
-12. Clone Vundle.
+13. Clone Vundle.
 
   ```
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/plugin/Vundle.vim
   ```
-13. Install Vundle.
+14. Install Vundle.
 
   ```
   #Open Vim
@@ -93,7 +98,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   #Run
   :PluginInstall
   ```
-14. Install all the Vundle plugins.
+15. Install all the Vundle plugins.
 
   ```vim
   # Open Vim
@@ -102,34 +107,34 @@ Dotfiles for tmux, vim and bash including powerline for all.
   #Run
   :PluginInstall
   ```
-15. Vim Powerline should be set up once a Vundle is performed.
+16. Vim Powerline should be set up once a Vundle is performed.
   - Source repo: https://github.com/vim-airline/vim-airline
-16. Install Ctags
+17. Install Ctags
   ```
   brew install ctags
   ```
-17. Install Gnupg
+18. Install Gnupg
 
   ```
   brew install gnupg
   ```
-18. Install RVM
+19. Install RVM
   - https://rvm.io/rvm/install#installing-rvm
-19. Install Global Gems
+20. Install Global Gems
 
   ```
   rvm @global do gem install awesome_print
   rvm @global do gem install pry
   rvm @global do gem install pry-byebug
   ```
-20. Install NPM & NPX [link](https://medium.com/@kkostov/how-to-install-node-and-npm-on-macos-using-homebrew-708e2c3877bd)
+21. Install NPM & NPX [link](https://medium.com/@kkostov/how-to-install-node-and-npm-on-macos-using-homebrew-708e2c3877bd)
 
   ```
   brew install node
   npm install -g npx
   ```
-21. Install alt-ruby.vim. (From Dropbox)
-22. Extra Documentation incase something has gone wrong.
+22. Install alt-ruby.vim. (From Dropbox)
+23. Extra Documentation incase something has gone wrong.
   - https://github.com/altercation/solarized
   - https://powerline.readthedocs.org/en/master/#powerline
   - https://github.com/powerline/powerline (Extra Powerline stuff)
