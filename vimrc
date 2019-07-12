@@ -73,6 +73,7 @@ set cindent
 
 set autoread
 
+" ************ Begin Split Config ************ "
 " Easier Split Movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -83,6 +84,18 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+" Set default and minimum size for splits
+set winheight=30
+set winminheight=7
+" set winwidth=128
+set winminwidth=20
+
+" Faster resizing of splits
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> } :exe "vertical resize" . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> { :exe "vertical resize" . (winwidth(0) * 2/3)<CR>
+
 " Open Splits
 nmap vv :vsplit<Enter>
 nmap ss :split<Enter>
@@ -92,6 +105,10 @@ nmap <c-o> :tab sp<Enter>
 
 " Close Tab
 nmap <C-c> <C-W>c
+
+" Set line wrapping
+set wrap
+" ************* End Split Config ************* "
 
 function! Rtags()
   execute "! ctags -R"
@@ -127,6 +144,11 @@ colorscheme solarized
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+" Highlight too long lines
+let w:m2=matchadd('ErrorMsg', '\%>150v.\+', -1)
+au BufWinEnter *.rb let w:m2=matchadd('ErrorMsg', '\%>150v.\+', -1)
+" Clear highlighting with :call clearmatches()
 
 " Trim Trailing Whitespace on Save
 autocmd BufWritePre * :%s/\s\+$//e
