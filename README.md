@@ -126,6 +126,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   rvm @global do gem install awesome_print
   rvm @global do gem install pry
   rvm @global do gem install pry-byebug
+  rvm @global do gem install httplog
   ```
 21. Install NPM & NPX [link](https://medium.com/@kkostov/how-to-install-node-and-npm-on-macos-using-homebrew-708e2c3877bd)
 
