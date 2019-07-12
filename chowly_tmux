@@ -7,7 +7,8 @@ new -s Chowly
 neww -n chowly -t 0 -c ~/Code/chowly-inc/chowly
 selectw -t 0
 splitw -h -p 30 -t 1 -c ~/Code/chowly-inc/chowly
-splitw -v -p 50 -t 1 -c ~/Code/chowly-inc/chowly
+splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
+splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles
