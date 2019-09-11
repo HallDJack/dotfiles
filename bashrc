@@ -4,6 +4,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH: /usr/local/Cellar/elixir/1.4.2/bin" # Add Elixir to PATH for development
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 export GOPATH=$HOME/Code/go
 
 # Set LS Colors
@@ -16,6 +19,7 @@ alias ..='cd ..'
 alias ls='ls -G' # regular ls, but with colorized output.
 alias la='ls -Glah' # ls with color, long format,  dot files and human readable size.
 alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 # ***** Bash ***** #
 alias ip='ifconfig en0 | grep inet | grep -v inet6 | awk "{print $2}"'
 sortByDate() {
@@ -73,11 +77,11 @@ alias gb='git branch'
 alias gchanged='git whatchanged --format="%n%C(yellow)commit %H%n%CblueAuthor:      %Creset%an | %ae%n%CblueAuthor Date: %Creset%ad%n%CblueCommit Date: %Creset%cd%n%CblueMessage:%n%Creset%s%n%C(yellow)Changes:"'
 alias gdiff='git diff'
 alias gdiff-cw='git diff --color-words'
-function gl() { git log -n "$@"; } # Calls log for a specific depth
+alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias glog='git log --color'
 alias gpub='if [ `git symbolic-ref --short -q HEAD` = "master" ]; then echo Cannot Publish to Master; else git push origin HEAD:`git symbolic-ref --short -q HEAD` -f -u; fi;' # push the current branch to origin
 alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
-alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
+alias gr-master='git checkout --quiet master && git pull --quiet && git checkout --quiet - && git rebase master;'
 alias gshow='git show'
 alias gst='git status'
 function branch() {
@@ -88,12 +92,13 @@ function branch() {
   str="$upper/$name";
   git checkout -b ${str// /-};
 }
+function delete-branch() {
+  git branch -D $@; git push origin --delete $@
+}
+function gl() { git log -n "$@"; } # Calls log for a specific depth
 function simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
-}
-function delete-branch() {
-  git branch -D $@; git push origin --delete $@
 }
 # ***** Tools ***** #
 alias ngrok="~/Code/ngrok"

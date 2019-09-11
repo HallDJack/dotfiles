@@ -32,6 +32,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
 7. Run the following commands to symlink the files in the repo to the apporpriate places.
 
   ```
+  mkdir ~/.nvm
   mkdir ~/.tmux
   mkdir ~/.config
   mkdir ~/.config/powerline-shell
