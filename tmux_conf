@@ -32,8 +32,8 @@ bind l select-pane -R
 # Allow faster resizing of panes
 bind < resize-p -L 10
 bind > resize-p -R 10
-bind U resize-p -U 10
-bind D resize-p -D 10
+bind K resize-p -U 10
+bind J resize-p -D 10
 
 # Build up a session for PopPays dev
 bind P source-file ~/Code/dotfiles/pop_tmux
