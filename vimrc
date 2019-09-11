@@ -86,9 +86,9 @@ set splitright
 
 " Set default and minimum size for splits
 set winheight=30
-set winminheight=7
+set winminheight=5
 " set winwidth=128
-set winminwidth=20
+set winminwidth=10
 
 " Faster resizing of splits
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
