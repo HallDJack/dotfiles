@@ -128,6 +128,7 @@ let g:airline_solarized_normal_green = 1
 let g:airline_solarized_dark_inactive_border = 1
 let g:airline_solarized_bg = 'light'
 let g:solarized_termcolors = 256
+let g:airline#extensions#branch#displayed_head_limit = 10 "Truncate long branch names to 10 characters.
 
 
 " Set Up Solarized
