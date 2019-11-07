@@ -10,6 +10,12 @@ splitw -h -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 
+# plaunch
+neww -n plaunch -c ~/Code/chowly-inc/plaunch
+selectw -t 2
+splitw -h -p 30 -t 2 -c ~/Code/chowly-inc/plaunch
+splitw -v -p 50 -t 2 -c ~/Code/chowly-inc/plaunch
+
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles
 selectw -t 9
