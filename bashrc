@@ -106,7 +106,7 @@ function fixup() {
   commits=(`git log --pretty=format:'%h %s (%cr) <%an>' --abbrev-commit master...`);
   IFS=$SAVEIFS;
 
-  echo 'Commits on this branch:';
+  printf "\e[48;5;240mCommits on this branch:\e[0m\n";
   for (( i=0; i<${#commits[@]}; i++ ))
   do
     if ! (( $i % 2 == 0 )); then
@@ -116,7 +116,8 @@ function fixup() {
     fi
   done
 
-  read -p "Choose a commit to fix up. " choice
+  printf "\e[48;5;240mChoose a commit to fix up.\e[0m\n";
+  read choice
 
   commit=${commits[$choice]}
   commitArray=($commit)
@@ -136,9 +137,9 @@ function style-commit() {
   unset commitArray[0]
 
   if [ $highlight == true ]; then
-    printf "\e[48;5;240m\e[38;5;083m$index: \e[0m\e[48;5;240m\e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}\e[0m \n"
+    printf "\e[48;5;240m  \e[48;5;241m\e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;241m${commitArray[*]}\e[48;5;240m  \e[0m\n"
   else
-    printf "\e[48;5;242m\e[38;5;083m$index: \e[0m\e[48;5;242m\e[38;5;220m$sha \e[0m\e[48;5;242m${commitArray[*]}\e[0m \n"
+    printf "\e[48;5;240m  \e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}  \e[0m\n"
   fi
 }
 # ***** Tools ***** #
