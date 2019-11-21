@@ -110,9 +110,9 @@ function fixup() {
   for (( i=0; i<${#commits[@]}; i++ ))
   do
     if ! (( $i % 2 == 0 )); then
-      echo -e "\033[1;34m $i: ${commits[$i]}";
+      style-commit $i "${commits[$i]}" true
     else
-      echo -e "\033[1;36m $i: ${commits[$i]}";
+      style-commit $i "${commits[$i]}" false
     fi
   done
 
@@ -124,6 +124,22 @@ function fixup() {
   sha=${commitArray[0]}
 
   git commit --fixup $sha
+  git rebase --autosquash master
+}
+function style-commit() {
+  # http://www.andrewnoske.com/wiki/Bash_-_adding_color
+  # https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes
+  index=$1
+  highlight=$3
+  commitArray=($2)
+  sha=${commitArray[0]}
+  unset commitArray[0]
+
+  if [ $highlight == true ]; then
+    printf "\e[48;5;240m\e[38;5;083m$index: \e[0m\e[48;5;240m\e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}\e[0m \n"
+  else
+    printf "\e[48;5;242m\e[38;5;083m$index: \e[0m\e[48;5;242m\e[38;5;220m$sha \e[0m\e[48;5;242m${commitArray[*]}\e[0m \n"
+  fi
 }
 # ***** Tools ***** #
 alias ngrok="~/Code/ngrok"
@@ -138,7 +154,13 @@ alias disk_status='diskutil cs list'
 # ***** Bundle ***** #
 alias be='bundle exec'
 alias bspec='bundle exec rspec'
-
+function colors() {
+  for((i=16; i<256; i++)); do
+    printf "\e[48;5;${i}m%03d" $i;
+    printf '\e[0m';
+    [ ! $((($i - 15) % 6)) -eq 0 ] && printf ' ' || printf '\n'
+  done
+}
 # ***** Rspec ***** #
 function nspec() {
   notify rspec $@
