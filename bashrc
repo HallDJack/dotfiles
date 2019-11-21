@@ -100,6 +100,31 @@ function simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
 }
+function fixup() {
+  SAVEIFS=$IFS;
+  IFS=$'\n';
+  commits=(`git log --pretty=format:'%h %s (%cr) <%an>' --abbrev-commit master...`);
+  IFS=$SAVEIFS;
+
+  echo 'Commits on this branch:';
+  for (( i=0; i<${#commits[@]}; i++ ))
+  do
+    if ! (( $i % 2 == 0 )); then
+      echo -e "\033[1;34m $i: ${commits[$i]}";
+    else
+      echo -e "\033[1;36m $i: ${commits[$i]}";
+    fi
+  done
+
+  read -p "Choose a commit to fix up. " choice
+
+  commit=${commits[$choice]}
+  commitArray=($commit)
+
+  sha=${commitArray[0]}
+
+  git commit --fixup $sha
+}
 # ***** Tools ***** #
 alias ngrok="~/Code/ngrok"
 alias tcpd80="sudo tcpdump -s 0 -A -i lo0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
@@ -118,6 +143,7 @@ alias bspec='bundle exec rspec'
 function nspec() {
   notify rspec $@
 }
+alias cspec='nspec $(gst -s | grep "_spec.rb" | sed "s/. \(.*_spec.rb\)/\1/g")'
 
 # ***** NVM ***** #
 export NVM_DIR="$HOME/.nvm"
