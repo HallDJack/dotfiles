@@ -80,7 +80,7 @@ alias gdiff-cw='git diff --color-words'
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias glog='git log --color'
 alias gpub='if [ `git symbolic-ref --short -q HEAD` = "master" ]; then echo Cannot Publish to Master; else git push origin HEAD:`git symbolic-ref --short -q HEAD` -f -u; fi;' # push the current branch to origin
-alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match '\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
+alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match "\*" | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
 alias gr-master='git checkout --quiet master && git pull --quiet && git checkout --quiet - && git rebase master;'
 alias gshow='git show'
 alias gst='git status'
@@ -104,6 +104,7 @@ function fixup() {
   SAVEIFS=$IFS;
   IFS=$'\n';
   commits=(`git log --pretty=format:'%h %s (%cr) <%an>' --abbrev-commit master...`);
+  # We might be able to avoid changing $IFS if we use xargs to split the result of git log by newline. git log ... | xargs -n 1 echo.
   IFS=$SAVEIFS;
 
   printf "\e[48;5;240mCommits on this branch:\e[0m\n";
