@@ -100,6 +100,13 @@ function simple-branch() {
   str="jh $@";
   git checkout -b ${str// /-};
 }
+function co-remote() {
+  fullBranch=$@;
+  remote=$(echo $fullBranch | sed 's/\([^\/]*\)\/.*/\1/g');
+  branchName=$(echo $fullBranch | sed 's/[^\/]*\/\(.*\)/\1/g');
+
+  git checkout -b $branchName $fullBranch
+}
 function fixup() {
   SAVEIFS=$IFS;
   IFS=$'\n';
