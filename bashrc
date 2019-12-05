@@ -133,7 +133,7 @@ function fixup() {
   sha=${commitArray[0]}
 
   git commit --fixup $sha
-  git rebase --autosquash $sha~1
+  git rebase --autosquash $sha~2
 }
 function style-commit() {
   # http://www.andrewnoske.com/wiki/Bash_-_adding_color
