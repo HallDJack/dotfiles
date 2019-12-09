@@ -114,7 +114,7 @@ function fixup() {
   # We might be able to avoid changing $IFS if we use xargs to split the result of git log by newline. git log ... | xargs -n 1 echo.
   IFS=$SAVEIFS;
 
-  printf "\e[48;5;240mCommits on this branch:\e[0m\n";
+  printf "\e[48;5;240mCommits on this branch:\e[K\n";
   for (( i=0; i<${#commits[@]}; i++ ))
   do
     if ! (( $i % 2 == 0 )); then
@@ -124,7 +124,7 @@ function fixup() {
     fi
   done
 
-  printf "\e[48;5;240mChoose a commit to fix up.\e[0m\n";
+  printf "\e[48;5;240mChoose a commit to fix up.\e[K\n";
   read choice
 
   commit=${commits[$choice]}
@@ -132,8 +132,12 @@ function fixup() {
 
   sha=${commitArray[0]}
 
+  printf "\e[48;5;240mRunning: \e[38;5;208git commit --fixup $sha\e[K\n";
   git commit --fixup $sha
+  printf "\e[48;5;240mRunning: \e[38;5;208git rebase --autosquash $sha~2\e[K\n";
   git rebase --autosquash $sha~2
+
+  printf "Fixup Complete\e[0m\n";
 }
 function style-commit() {
   # http://www.andrewnoske.com/wiki/Bash_-_adding_color
@@ -145,9 +149,9 @@ function style-commit() {
   unset commitArray[0]
 
   if [ $highlight == true ]; then
-    printf "\e[48;5;240m  \e[48;5;241m\e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;241m${commitArray[*]}\e[48;5;240m  \e[0m\n"
+    printf "\e[48;5;240m  \e[48;5;241m\e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;241m${commitArray[*]}\e[48;5;240m  \e[K\n"
   else
-    printf "\e[48;5;240m  \e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}  \e[0m\n"
+    printf "\e[48;5;240m  \e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}  \e[K\n"
   fi
 }
 # ***** Tools ***** #
