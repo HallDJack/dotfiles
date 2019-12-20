@@ -58,7 +58,7 @@ set -g status-bg colour235
 set -g status-fg white
 
 # Set Solarized theme
-set -g @colors-solarized 'light'
+set -g @colors-solarized 'dark'
 
 # Turn on Tmux Yank
 #run-shell ~/Code/tmux-yank/yank.tmux
@@ -70,6 +70,7 @@ set -g @colors-solarized 'light'
  set -g @plugin 'tmux-plugins/tpm'
  set -g @plugin 'tmux-plugins/tmux-sensible'
  set -g @plugin 'tmux-plugins/tmux-resurrect'
+ set -g @plugin 'seebi/tmux-colors-solarized'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
