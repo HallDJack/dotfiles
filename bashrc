@@ -154,6 +154,41 @@ function style-commit() {
     printf "\e[48;5;240m  \e[38;5;083m$index: \e[38;5;220m$sha \e[0m\e[48;5;240m${commitArray[*]}  \e[K\n"
   fi
 }
+function change-branch() {
+  branches=(`git branch | sed 's/\*//g' | xargs -n 1 echo`)
+
+  printf "\e[48;5;240mBranches:\e[K\n";
+  for (( i=0; i<${#branches[@]}; i++ ))
+  do
+    if ! (( $i % 2 == 0 )); then
+      style-branch $i "${branches[$i]}" true
+    else
+      style-branch $i "${branches[$i]}" false
+    fi
+  done
+
+  printf "\e[48;5;240mChoose a branch to switch to.\e[K\n";
+  read choice
+
+  branch=${branches[$choice]}
+  printf "\e[48;5;240mRunning: \e[38;5;208git checkout $branch\e[K\n";
+  git checkout $branch
+
+  printf "Complete\e[0m\n";
+}
+function style-branch() {
+  # http://www.andrewnoske.com/wiki/Bash_-_adding_color
+  # https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes
+  index=$1
+  branch=$2
+  highlight=$3
+
+  if [ $highlight == true ]; then
+    printf "\e[48;5;240m  \e[48;5;241m\e[38;5;083m$index: \e[0m\e[48;5;239m$branch\e[48;5;240m  \e[K\n"
+  else
+    printf "\e[48;5;240m  \e[38;5;083m$index: \e[0m\e[48;5;240m$branch  \e[K\n"
+  fi
+}
 # ***** Tools ***** #
 alias ngrok="~/Code/ngrok"
 alias tcpd80="sudo tcpdump -s 0 -A -i lo0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'"
