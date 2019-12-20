@@ -31,8 +31,13 @@ sortByDate() {
   done
 }
 # ***** iTerm ***** #
-alias dark='echo "Profile Set to Solarized Dark"; echo -e "\033]50;SetProfile=SolarizedDark\a"'
-alias light='echo "Profile Set to Solarized Light"; echo -e "\033]50;SetProfile=SolarizedLight\a"'
+alias dark='change_profile Solarized Dark;'
+alias light='change_profile Solarized Light;'
+change_profile () {
+  NAME=$1;
+  echo "Profile Set to $NAME"
+  echo -e "\033]50;SetProfile=$NAME\a"
+}
 function set_iterm_title() {
   if [ $# -eq 0 ]
   then
