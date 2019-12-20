@@ -57,6 +57,8 @@ nmap ,l :set nonumber norelativenumber<CR>:sleep 5000m<CR>:set number relativenu
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+"Turn numbers off
+nmap ,nl :set nonumber norelativenumber<CR>
 
 " Highlight everything that matches the pattern
 :set hlsearch
