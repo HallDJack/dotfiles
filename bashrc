@@ -1,5 +1,7 @@
 alias lsusb='system_profiler SPUSBDataType'
 
+export DOTFILES_PATH="$HOME/Code/dotfiles"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH: /usr/local/Cellar/elixir/1.4.2/bin" # Add Elixir to PATH for development
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
@@ -8,6 +10,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 export GOPATH=$HOME/Code/go
+source $DOTFILES_PATH/corberrc
 
 # Set LS Colors
 export LSCOLORS=dxfxcxdxbxegedabagacad
