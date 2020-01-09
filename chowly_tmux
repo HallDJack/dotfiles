@@ -4,6 +4,7 @@ set-remain-on-exit on
 # Chowly session
 new -s Chowly
 
+# chowly api
 neww -n chowly -t 0 -c ~/Code/chowly-inc/chowly
 selectw -t 0
 splitw -h -p 30 -t 1 -c ~/Code/chowly-inc/chowly
@@ -15,6 +16,13 @@ neww -n plaunch -c ~/Code/chowly-inc/plaunch
 selectw -t 2
 splitw -h -p 30 -t 2 -c ~/Code/chowly-inc/plaunch
 splitw -v -p 50 -t 2 -c ~/Code/chowly-inc/plaunch
+
+# mobile app
+neww -n mobile-app -c ~/Code/chowly-inc/mobile-app
+selectw -t 3
+splitw -h -p 30 -t 3 -c ~/Code/chowly-inc/mobile-app
+splitw -v -p 30 -t 3 -c ~/Code/chowly-inc/mobile-app
+splitw -v -p 30 -t 3 -c ~/Code/chowly-inc/mobile-app
 
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles
