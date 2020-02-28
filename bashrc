@@ -93,10 +93,10 @@ alias gr-master='git checkout --quiet master && git pull --quiet && git checkout
 alias gshow='git show'
 alias gst='git status'
 function branch() {
-  read -p "Ticket #: CHOW-" ticket
+  read -p "Ticket #: " ticket
   read -p "Description: " name
 
-  upper=`echo "CHOW-$ticket" | tr '[:lower:]' '[:upper:]'`
+  upper=`echo "$ticket" | tr '[:lower:]' '[:upper:]'`
   str="$upper/$name";
   git checkout -b ${str// /-};
 }
