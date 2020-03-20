@@ -28,12 +28,17 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+# Movement with zoom
+bind H select-pane -L\; resize-pane -Z
+bind J select-pane -D\; resize-pane -Z
+bind K select-pane -U\; resize-pane -Z
+bind L select-pane -R\; resize-pane -Z
 
 # Allow faster resizing of panes
 bind < resize-p -L 10
 bind > resize-p -R 10
-bind K resize-p -U 10
-bind J resize-p -D 10
+bind - resize-p -U 10
+bind + resize-p -D 10
 
 # Build up a session for PopPays dev
 bind P source-file ~/Code/dotfiles/pop_tmux
