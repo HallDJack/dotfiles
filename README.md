@@ -47,6 +47,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   ln -s $repo_dir/tmux_conf              ~/.tmux.conf
   ln -s $repo_dir/tmux_powerline         ~/.tmux-powerline
   ln -s $repo_dir/tmux_powerlinerc       ~/.tmux-powerlinerc
+  ln -s $repo_dir/tmate_conf              ~/.tmate.conf
   ln -s $repo_dir/pop_tmux               ~/.tmux/poppays
   ln -s $repo_dir/vimrc                  ~/.vimrc
   ```
