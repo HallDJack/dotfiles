@@ -5,8 +5,8 @@ set-remain-on-exit on
 new -s Chowly
 
 # chowly api
-neww -n chowly -t 0 -c ~/Code/chowly-inc/chowly
-selectw -t 0
+neww -n chowly -t 1 -c ~/Code/chowly-inc/chowly
+selectw -t 1
 splitw -h -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
 splitw -v -p 30 -t 1 -c ~/Code/chowly-inc/chowly
