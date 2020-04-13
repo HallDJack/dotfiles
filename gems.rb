@@ -9,6 +9,7 @@ require 'awesome_print'
 require 'pry'
 require 'pry-byebug'
 require 'httplog'
+require 'json'
 
 HttpLog.configure do |config|
   # Enable or disable all logging
@@ -24,7 +25,7 @@ HttpLog.configure do |config|
   # Tweak which parts of the HTTP cycle to log...
   config.log_connect   = true
   config.log_request   = true
-  config.log_headers   = false
+  config.log_headers   = true
   config.log_data      = true
   config.log_status    = true
   config.log_response  = true
@@ -42,6 +43,10 @@ HttpLog.configure do |config|
   # Limit logging based on URL patterns
   config.url_whitelist_pattern = nil
   config.url_blacklist_pattern = nil
+
+  # You can specify any custom JSON serializer that implements `load` and `dump` class methods
+  # to parse JSON responses
+  config.json_parser = JSON
 
   # Mask the values of sensitive requestparameters
   config.filter_parameters = %w[password]
