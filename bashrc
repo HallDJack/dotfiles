@@ -92,7 +92,7 @@ alias gprune_local='git checkout --quiet master && git branch --merged | grep --
 alias gr-master='git checkout --quiet master && git pull --quiet && git checkout --quiet - && git rebase master;'
 alias grep='grep --color -rn'
 alias gshow='git show'
-alias gst='git status'
+alias gst='git status -u'
 function branch() {
   read -p "Ticket #: " ticket
   read -p "Description: " name
@@ -222,7 +222,7 @@ function colors() {
 function nspec() {
   notify rspec $@
 }
-alias cspec='nspec $(gst -s | grep "_spec.rb" | sed "s/. \(.*_spec.rb\)/\1/g")'
+alias cspec='nspec $(gst -su | grep "_spec.rb" | sed "s/.* \(.*_spec.rb\)/\1/g")'
 
 # ***** NVM ***** #
 export NVM_DIR="$HOME/.nvm"
