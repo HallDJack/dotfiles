@@ -64,6 +64,9 @@ nmap ,nl :set nonumber norelativenumber<CR>
 :set hlsearch
 nmap // :noh<Enter>
 
+" Highlight the current line
+set cursorline
+
 " No Swap Files
 set noswapfile
 
@@ -209,5 +212,5 @@ au BufRead *.rabl set syntax=ruby
 au BufRead *.rb set syntax=ruby
 
 " flash the line that contains the cursor
-map ; :set cursorline<CR>:set cursorcolumn<CR>:sleep 100m<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
+" map ; :set cursorline<CR>:set cursorcolumn<CR>:sleep 100m<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
 
