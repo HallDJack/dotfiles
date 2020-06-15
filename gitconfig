@@ -1,0 +1,22 @@
+[credential]
+  helper = osxkeychain
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  ignorecase = true
+  precomposeunicode = true
+[push]
+  default = simple
+[user]
+  name = Jack Hall
+  email = hall.d.jack@gmail.com
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  sync = "!f=$( git checkout --quiet master && git fetch upstream && git merge upstream/master && git push && git checkout --quiet @{-1}; echo 'done'); ${f}"
+

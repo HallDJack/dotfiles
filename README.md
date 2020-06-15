@@ -39,6 +39,7 @@ Dotfiles for tmux, vim and bash including powerline for all.
   export repo_dir=/path/to/this/repo
   ln -s $repo_dir/bash_profile           ~/.bash_profile
   ln -s $repo_dir/bashrc                 ~/.bashrc
+  ln -s $repo_dir/gitconfig              ~/.gitconfig
   ln -s $repo_dir/git_ignore             ~/.gitignore
   ln -s $repo_dir/irbrc                  ~/.irbrc
   ln -s $repo_dir/powerline_shell_config ~/.config/powerline-shell/config.json
