@@ -87,12 +87,25 @@ alias gdiff='git diff'
 alias gdiff-cw='git diff --color-words'
 alias git-rename='git config --local user.email "hall.d.jack@gmail.com" ; git config --local user.name "Jack Hall"'
 alias glog='git log --color'
+alias gprune_local='gprune_local_fn'
 alias gpub='if [ `git symbolic-ref --short -q HEAD` = "master" ]; then echo Cannot Publish to Master; else git push origin HEAD:`git symbolic-ref --short -q HEAD` -f -u; fi;' # push the current branch to origin
-alias gprune_local='git checkout --quiet master && git branch --merged | grep --invert-match "\*" | xargs -n 1 git branch --delete; git checkout --quiet @{-1};'
 alias gr-master='git checkout --quiet master && git pull --quiet && git checkout --quiet - && git rebase master;'
 alias grep='grep --color -rn'
 alias gshow='git show'
 alias gst='git status -u'
+function gprune_local_fn() {
+  git checkout --quiet master
+  raw_branches=$(git branch --merged | grep -E --invert-match "(  main|\* master)")
+  unset trimmed_branches
+  for branch in "${raw_branches[@]}"; do
+    trimmed_branches+=( "$( echo "$branch" |  sed 's/(standard input):1:  //g' )" )
+  done
+  echo 'Deleted Branches:'
+  printf '%s\n' "${trimmed_branches[@]}"
+  echo ${trimmed_branches[@]} | xargs -n 1 git branch --delete
+
+  git checkout --quiet @{-1}
+}
 function branch() {
   read -p "Ticket #: " ticket
   read -p "Description: " name
@@ -114,6 +127,7 @@ function co-remote() {
   remote=$(echo $fullBranch | sed 's/\([^\/]*\)\/.*/\1/g');
   branchName=$(echo $fullBranch | sed 's/[^\/]*\/\(.*\)/\1/g');
 
+  git fetch $remote
   git checkout -b $branchName $fullBranch
 }
 function fixup() {
