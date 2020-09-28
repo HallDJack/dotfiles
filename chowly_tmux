@@ -36,6 +36,13 @@ selectw -t 5
 splitw -h -p 30 -t 5 -c ~/Code/chowly-inc/l-addition
 splitw -v -p 50 -t 5 -c ~/Code/chowly-inc/l-addition
 
+# qr-to-us
+neww -n qr-to-us -c ~/Code/chowly-inc/qr-to-us
+selectw -t 6
+splitw -h -p 30 -t 6 -c ~/Code/chowly-inc/qr-to-us
+splitw -v -p 30 -t 6 -c ~/Code/chowly-inc/qr-to-us
+splitw -v -p 30 -t 6 -c ~/Code/chowly-inc/qr-to-us
+
 # dotfiles
 neww -n dotfiles -t 9 -c ~/Code/dotfiles
 selectw -t 9
