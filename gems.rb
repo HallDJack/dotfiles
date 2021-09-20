@@ -46,7 +46,7 @@ HttpLog.configure do |config|
 
   # You can specify any custom JSON serializer that implements `load` and `dump` class methods
   # to parse JSON responses
-  config.json_parser = JSON
+  # config.json_parser = JSON
 
   # Mask the values of sensitive requestparameters
   config.filter_parameters = %w[password]
