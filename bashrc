@@ -2,8 +2,10 @@ alias lsusb='system_profiler SPUSBDataType'
 
 export DOTFILES_PATH="$HOME/Code/dotfiles"
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH: /usr/local/Cellar/elixir/1.4.2/bin" # Add Elixir to PATH for development
+export PATH=${JAVA_HOME}/bin:$PATH # Add Java 1.8 to PATH for swagger-codegen
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 export NVM_DIR=~/.nvm
@@ -94,8 +96,8 @@ alias grep='grep --color -rn'
 alias gshow='git show'
 alias gst='git status -u'
 function gprune_local_fn() {
-  git checkout --quiet master
-  raw_branches=$(git branch --merged | grep -E --invert-match "(  main|\* master)")
+  git checkout --quiet main
+  raw_branches=$(git branch --merged | grep -E --invert-match "\* main")
   unset trimmed_branches
   for branch in "${raw_branches[@]}"; do
     trimmed_branches+=( "$( echo "$branch" |  sed 's/(standard input):1:  //g' )" )
@@ -133,7 +135,7 @@ function co-remote() {
 function fixup() {
   SAVEIFS=$IFS;
   IFS=$'\n';
-  commits=(`git log --pretty=format:'%h %s (%cr) <%an>' --abbrev-commit master...`);
+  commits=(`git log --pretty=format:'%h %s (%cr) <%an>' --abbrev-commit main...`);
   # We might be able to avoid changing $IFS if we use xargs to split the result of git log by newline. git log ... | xargs -n 1 echo.
   IFS=$SAVEIFS;
 
@@ -156,9 +158,9 @@ function fixup() {
   sha=${commitArray[0]}
 
   printf "\e[48;5;240mRunning: \e[38;5;208git commit --fixup $sha\e[K\n";
-  git commit --fixup $sha
-  printf "\e[48;5;240mRunning: \e[38;5;208git rebase --autosquash $sha~2\e[K\n";
-  git rebase --autosquash $sha~2
+  git commit -n --fixup $sha
+  printf "\e[48;5;240mRunning: \e[38;5;208git rebase --autosquash main\e[K\n";
+  git rebase --interactive --autosquash main
 
   printf "Fixup Complete\e[0m\n";
 }
