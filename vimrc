@@ -171,6 +171,7 @@ let g:scratch_horizontal = 0
 
 " NERDTree
 nmap ,n :NERDTreeToggle<CR>
+nmap ,f :NERDTreeFind<CR>
 let g:NERDTreeNodeDelimiter = "\u00a0"
 " let NERDTreeWinSize=45
 " Close vim if the only window left open is NERDTree
