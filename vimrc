@@ -112,7 +112,8 @@ nmap <c-o> :tab sp<Enter>
 nmap <C-c> <C-W>c
 
 " Set line wrapping
-set wrap
+set wrap linebreak
+set showbreak=+++
 " ************* End Split Config ************* "
 
 function! Rtags()
