@@ -31,10 +31,10 @@ splitw -h -p 30 -t 4 -c ~/Code/chowly-inc/aperitif
 splitw -v -p 50 -t 4 -c ~/Code/chowly-inc/aperitif
 
 # l'addition
-neww -n l-addition -c ~/Code/chowly-inc/l-addition
-selectw -t 5
-splitw -h -p 30 -t 5 -c ~/Code/chowly-inc/l-addition
-splitw -v -p 50 -t 5 -c ~/Code/chowly-inc/l-addition
+# neww -n l-addition -c ~/Code/chowly-inc/l-addition
+# selectw -t 5
+# splitw -h -p 30 -t 5 -c ~/Code/chowly-inc/l-addition
+# splitw -v -p 50 -t 5 -c ~/Code/chowly-inc/l-addition
 
 # qr-to-us
 neww -n qr-to-us -c ~/Code/chowly-inc/qr-to-us
