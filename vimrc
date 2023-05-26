@@ -8,14 +8,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-
 Plugin 'Townk/vim-autoclose'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -31,6 +23,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'luochen1990/rainbow'
+Plugin 'github/copilot.vim'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -216,3 +216,10 @@ au BufRead *.rb set syntax=ruby
 " flash the line that contains the cursor
 " map ; :set cursorline<CR>:set cursorcolumn<CR>:sleep 100m<CR>:set nocursorline<CR>:set nocursorcolumn<CR>
 
+" ************ Begin CoPilot Config ************ "
+autocmd BufReadPre *
+      \ let f=getfsize(expand("<afile>"))
+      \ | if f > 100000 || f == -2
+      \ | let b:copilot_enabled = v:false
+      \ | endif
+" ************* End CoPilot Config ************* "
