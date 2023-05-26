@@ -6,6 +6,8 @@
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
+	<key>CopySelection</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Solarized Dark</key>
@@ -431,6 +433,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>EB3A9081-8CC5-4447-AE11-43F93AF97312</string>
+	<key>EnterCopyModeAutomatically</key>
+	<false/>
 	<key>EscapeShellCharsWithBackslash</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>

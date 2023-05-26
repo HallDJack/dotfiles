@@ -2,9 +2,10 @@ alias lsusb='system_profiler SPUSBDataType'
 
 export DOTFILES_PATH="$HOME/Code/dotfiles"
 
+export PATH=~/Library/Android/sdk/platform-tools/:$PATH # Add adb to PATH for Android Dev
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH: /usr/local/Cellar/elixir/1.4.2/bin" # Add Elixir to PATH for development
+export PATH="$PATH:/usr/local/Cellar/elixir/1.4.2/bin" # Add Elixir to PATH for development
 export PATH=${JAVA_HOME}/bin:$PATH # Add Java 1.8 to PATH for swagger-codegen
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
